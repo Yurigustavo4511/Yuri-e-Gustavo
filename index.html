@@ -37,7 +37,7 @@ tr:nth-child(even) {
 
 <h2>Tabela do Brasileirão</h2>
 
-<table>
+<table id="minhaTabela" class=tabela-normal">
   <tr>
     <th>Posição</th>
     <th>Equipe</th>
@@ -130,7 +130,17 @@ tr:nth-child(even) {
   </tr>
 
 </table> 
+   const tabela = document.getElementById("minhaTabela");
 
+   tabela.addEventListener("mouseover", function() {
+       tabela.style.width = "200%"; // Aumenta a largura da tabela
+       tabela.style.transition = "width 0.3s ease-in-out"; // Transição suave
+   });
+
+   tabela.addEventListener("mouseout", function() {
+       tabela.style.width = "100%"; // Retorna ao tamanho original
+       tabela.style.transition = "width 0.3s ease-in-out";
+   });
  </body>
 
  <!DOCTYPE html>
