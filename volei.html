@@ -1,148 +1,91 @@
-<html>
-  <head>
-<title>Superliga de Volêi</title>
- <html>
-  <head>
-  <style>
-table, th, td {
-  border:1px solid black;
-</style>
- <h2>Super liga de volley</h2>
- <!DOCTYPE html>
-  <html>
-  <head>
-  <title>Tabela de Classificação de Esportes</title>
-  <style>
-  table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 90%;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Superliga de Vôlei</title>
+    <style>
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 90%;
+        }
 
- td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
+        thead tr {
+            background-color: #cccccc;
+        }
 
- tr:nth-child(even) {
-  background-color: #dddddd;
-}
- </style>
- </head>
-  <body>
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
 
-  <h2>Tabela de volley</h2>
-  <table>
-  <tr>
-    <th>Posição</th>
-    <th>Equipe</th>
-    <th>Pontos</th>
-    <th>J</th>
-    <th>V</th>
-    <th>D</th>
-    <th>MP</th>
-  </tr>
-  <tr>
-    <td>1</td>
-    <td> Dentil Praia Clube </td>
-    <td> 53 </td>
-    <td> 22 </td>
-    <td> 19 </td>
-    <td> 3 </td>
-    <td> 1.09 </td>
-  </tr>
-    <tr>
-    <td>2</td>
-    <td> Gerdau Minas </td>
-    <td> 48 </td>
-    <td> 22 </td>
-    <td> 17  </td>
-    <td> 5 </td>
-    <td> 1.1 </td>
-  </tr>
-    <tr>
-    <td>3</td>
-    <td> Osasco </td>
-    <td> 47 </td>
-    <td> 22  </td>
-    <td> 15 </td>
-    <td> 7 </td>
-    <td> 1.1 </td>
-  </tr>
-    <tr>
-    <td>4</td>
-    <td> Fluminense F.C </td>
-    <td> 43 </td>
-    <td> 22 </td>
-    <td> 15 </td>
-    <td> 7 </td>
-    <td> 1.04 </td>
-  </tr>
-    <tr>
-    <td>5</td>
-    <td> Sesi Vôlei Bauru </td>
-    <td> 42 </td>
-    <td> 22  </td>
-    <td> 14 </td>
-    <td> 8 </td>
-    <td> 1.06 </td>
-  </tr>
-    <tr>
-    <td>6</td>
-    <td> Sesc RJ Flamengo </td>
-    <td> 42 </td>
-    <td> 22 </td>
-    <td> 13 </td>
-    <td> 9 </td>
-    <td> 1.08 </td>
-  </tr>
-      <tr>
-    <td>7</td>
-    <td> Barueri </td>
-    <td> 29 </td>
-    <td> 22 </td>
-    <td> 10 </td>
-    <td> 12 </td>
-    <td> 0.99 </td>
-  </tr>
-      <tr>
-    <td>8</td>
-    <td> Unilife Maringá </td>
-    <td> 23 </td>
-    <td> 38 </td>
-    <td> 15 </td>
-    <td> 8 </td>
-    <td> 0.96 </td>
-  </tr>
-  <tr>
-    <td> 9 </td>
-    <td> Mackenzie </td>
-    <td> 23 </td>
-    <td> 22 </td>
-    <td> 7 </td>
-    <td> 15 </td>
-    <td> 0.94 </td>
-  </tr>
-</table> 
+        tr {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
- </body>
-<html>
- <!DOCTYPE html>
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
 
- <head>
+        tr.zoomed-row {
+            transform: scale(1.02);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #f0f8ff;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
 
- </head>
+    <h2>Superliga de Vôlei - Classificação</h2>
 
- <body>
+    <table id="tabelaVolei">
+        <thead>
+            <tr>
+                <th>Posição</th>
+                <th>Equipe</th>
+                <th>Pontos</th>
+                <th>J</th>
+                <th>V</th>
+                <th>D</th>
+                <th>MP</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>1</td><td>Dentil Praia Clube</td><td>53</td><td>22</td><td>19</td><td>3</td><td>1.09</td></tr>
+            <tr><td>2</td><td>Gerdau Minas</td><td>48</td><td>22</td><td>17</td><td>5</td><td>1.1</td></tr>
+            <tr><td>3</td><td>Osasco</td><td>47</td><td>22</td><td>15</td><td>7</td><td>1.1</td></tr>
+            <tr><td>4</td><td>Fluminense F.C</td><td>43</td><td>22</td><td>15</td><td>7</td><td>1.04</td></tr>
+            <tr><td>5</td><td>Sesi Vôlei Bauru</td><td>42</td><td>22</td><td>14</td><td>8</td><td>1.06</td></tr>
+            <tr><td>6</td><td>Sesc RJ Flamengo</td><td>42</td><td>22</td><td>13</td><td>9</td><td>1.08</td></tr>
+            <tr><td>7</td><td>Barueri</td><td>29</td><td>22</td><td>10</td><td>12</td><td>0.99</td></tr>
+            <tr><td>8</td><td>Unilife Maringá</td><td>23</td><td>38</td><td>15</td><td>8</td><td>0.96</td></tr>
+            <tr><td>9</td><td>Mackenzie</td><td>23</td><td>22</td><td>7</td><td>15</td><td>0.94</td></tr>
+        </tbody>
+    </table>
 
- <a href="basquete.html">
+    <br>
 
- <button>Basquete</button>
+    <a href="basquete.html">
+        <button>Basquete</button>
+    </a>
 
-   </a>
+    <script>
+        // Aplica zoom suave em cada linha da tabela
+        const linhas = document.querySelectorAll('#tabelaVolei tbody tr');
 
-   </body>
+        linhas.forEach((linha) => {
+            linha.addEventListener('mouseover', function () {
+                linha.classList.add('zoomed-row');
+            });
 
-    </html>
- 
+            linha.addEventListener('mouseout', function () {
+                linha.classList.remove('zoomed-row');
+            });
+        });
+    </script>
+
+</body>
+</html>
