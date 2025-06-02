@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Esportes Bocadas</title>
     <style>
         table {
@@ -36,6 +36,43 @@
             background-color: #f0f8ff;
             position: relative;
             z-index: 1;
+        }
+
+        /* Estilo do rodapé */
+        footer {
+            width: 100%;
+            background-color: #222;
+            color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            gap: 15px;
+            font-family: Arial, sans-serif;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
+        }
+
+        footer .logo {
+            width: 30px;
+            height: 30px;
+            flex-shrink: 0;
+        }
+
+        footer a {
+            color: #66ccff;
+            text-decoration: none;
+            margin-left: 8px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Espaço para não ficar escondido atrás do footer */
+        body {
+            padding-bottom: 60px;
         }
     </style>
 </head>
@@ -87,6 +124,27 @@
                 linha.classList.remove('zoomed-row');
             });
         });
+
+        // Criar o rodapé via JavaScript
+        const footer = document.createElement('footer');
+
+        // SVG simples de uma bola de futebol
+        const logoSvg = `
+            <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#eee" stroke="#222" stroke-width="2">
+                <circle cx="32" cy="32" r="30" fill="#000" />
+                <polygon points="32,4 39,22 58,22 42,34 47,52 32,41 17,52 22,34 6,22 25,22" fill="#eee"/>
+                <circle cx="32" cy="32" r="8" fill="#000"/>
+            </svg>`;
+
+        footer.innerHTML = `
+            ${logoSvg}
+            <div>
+                <span>Gmail: <a href="mailto:informaçoesesportes@gmail.com">informaçoesesportes@gmail.com</a></span> |
+                <span>Telefone: <a href="tel:+55699985728486">(69) 99857-28486</a></span>
+            </div>
+        `;
+
+        document.body.appendChild(footer);
     </script>
 
 </body>
