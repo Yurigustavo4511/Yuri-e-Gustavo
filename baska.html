@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Tabela de Classificação de Esportes</title>
   <style>
     table {
@@ -31,6 +31,43 @@
       background-color: #e0f7fa; /* Cor de fundo suavemente destacada */
       position: relative;
       z-index: 1;
+    }
+
+    /* Estilo do rodapé */
+    footer {
+      width: 100%;
+      background-color: #222;
+      color: #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      gap: 15px;
+      font-family: Arial, sans-serif;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
+    }
+
+    footer .logo {
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+    }
+
+    footer a {
+      color: #66ccff;
+      text-decoration: none;
+      margin-left: 8px;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Espaço para não ficar escondido atrás do footer */
+    body {
+      padding-bottom: 60px;
     }
   </style>
 </head>
@@ -145,6 +182,28 @@
         linha.classList.remove('zoomed-row'); // Remove a classe de zoom quando o mouse sai
       });
     });
+
+    // Criar rodapé com logo de bola de basquete
+    const footer = document.createElement('footer');
+
+    const logoSvg = `
+      <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#ee7b1a" stroke="#222" stroke-width="2">
+        <circle cx="32" cy="32" r="30" fill="#ee7b1a" />
+        <path d="M32 2 A30 30 0 0 1 32 62 A30 30 0 0 1 32 2 Z" stroke="#662e00" stroke-width="3" fill="none"/>
+        <path d="M2 32 A30 30 0 0 1 62 32 A30 30 0 0 1 2 32 Z" stroke="#662e00" stroke-width="3" fill="none"/>
+        <path d="M15 15 L49 49" stroke="#662e00" stroke-width="3"/>
+        <path d="M49 15 L15 49" stroke="#662e00" stroke-width="3"/>
+      </svg>`;
+
+    footer.innerHTML = `
+      ${logoSvg}
+      <div>
+        <span>Gmail: <a href="mailto:informaçoesesportes@gmail.com">informaçoesesportes@gmail.com</a></span> |
+        <span>Telefone: <a href="tel:+55699985728486">(69) 99857-28486</a></span>
+      </div>
+    `;
+
+    document.body.appendChild(footer);
   </script>
 
 </body>
