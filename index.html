@@ -5,10 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Esportes Bocadas</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding-bottom: 60px; /* espaço para o rodapé */
+            margin: 0;
+        }
+
+        /* Cabeçalho com menu */
+        nav {
+            background-color: #222;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav div:first-child {
+            color: white;
+            font-size: 20px;
+        }
+
+        nav a {
+            color: #66ccff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        h2, h3 {
+            margin-left: 20px;
+        }
+
+        p {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
         table {
             font-family: Arial, sans-serif;
             border-collapse: collapse;
             width: 90%;
+            margin: 0 auto;
         }
 
         thead tr {
@@ -29,7 +69,6 @@
             background-color: #f9f9f9;
         }
 
-        /* Efeito suave de zoom e sombra */
         tr.zoomed-row {
             transform: scale(1.02);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -38,7 +77,12 @@
             z-index: 1;
         }
 
-        /* Estilo do rodapé */
+        button {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+
         footer {
             width: 100%;
             background-color: #222;
@@ -66,17 +110,22 @@
             text-decoration: none;
             margin-left: 8px;
         }
+
         footer a:hover {
             text-decoration: underline;
-        }
-
-        /* Espaço para não ficar escondido atrás do footer */
-        body {
-            padding-bottom: 60px;
         }
     </style>
 </head>
 <body>
+
+    <!-- MENU -->
+    <nav>
+        <div>Esportes Bocadas</div>
+        <div>
+            <a href="index.html">Início</a>
+            <a href="sobre.html">Sobre</a>
+        </div>
+    </nav>
 
     <h2>Bem-vindo às melhores informações de esportes do Brasil</h2>
     <p>Essas páginas são dedicadas a esportes como futebol, basquete e vôlei.</p>
@@ -128,7 +177,6 @@
         // Criar o rodapé via JavaScript
         const footer = document.createElement('footer');
 
-        // SVG simples de uma bola de futebol
         const logoSvg = `
             <svg class="logo" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" fill="#eee" stroke="#222" stroke-width="2">
                 <circle cx="32" cy="32" r="30" fill="#000" />
